@@ -5,13 +5,19 @@ const EMP_RATE_PER_HOUR = 20;
 var empHrs = 0;
 var empWage = 0;
 let empcheckrandom = Math.floor(Math.random()*3);
-if(empcheckrandom == IS_FULL_TIME){
-    empHrs = 8;
-}else if(empcheckrandom == IS_Part_TIME){
-    empHrs = 4;
-}
-else{
-    empHrs = 0;
+
+switch(empcheckrandom){
+    case IS_FULL_TIME:
+        empHrs = 8;
+        break;
+
+        case IS_Part_TIME:
+            empHrs = 4;
+            break;
+
+            default:
+                empHrs = 0;
+        
 }
 
 empWage = empHrs * EMP_RATE_PER_HOUR;
