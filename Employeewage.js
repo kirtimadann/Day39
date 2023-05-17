@@ -3,13 +3,14 @@ const IS_FULL_TIME = 2;
 const IS_Part_TIME = 1;
 const EMP_RATE_PER_HOUR = 20;
 const EMP_WORKING_DAY = 20;
+const EMP_WORKING_HRS= 100;
 
 var empHrs = 0;
-var empWage = 0;
-var totalempWage = 0;
-var day = 0;
-for ( day = 0; day < EMP_WORKING_DAY; day++) {
+var totalEmpHrs = 0;
+var totalEmpDays = 0;
 
+while (totalEmpHrs <= EMP_WORKING_HRS && totalEmpDays < EMP_WORKING_DAY){
+    totalEmpDays++;
 let empcheckrandom = Math.floor(Math.random()*3);
 
 switch(empcheckrandom){
@@ -26,9 +27,11 @@ switch(empcheckrandom){
         
 }
 
-empWage = empHrs * EMP_RATE_PER_HOUR;
-totalempWage = totalempWage + empWage;
-console.log(empWage);
+totalEmpHrs = empHrs + totalEmpHrs;
+console.log("day "+totalEmpDays+ ": " +totalEmpHrs + " Hours");
+
+
 }
 
-console.log("total wage" + totalempWage);
+var empwage = totalEmpHrs * EMP_RATE_PER_HOUR;
+       console.log (empwage);
